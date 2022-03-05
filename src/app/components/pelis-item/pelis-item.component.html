@@ -1,0 +1,16 @@
+<ng-container *ngIf="itemData">
+  <a class="pelis-item">
+    <div class="pelis-item-rating">
+      <i class="app-icon">star</i>
+      <span>{{ itemData.vote_average }}</span
+      >/10
+    </div>
+    <div class="pelis-item-image">
+      <img
+        [src]="'https://image.tmdb.org/t/p/original/' + itemData.poster_path"
+        [alt]="itemData.title"
+      />
+    </div>
+    <div class="pelis-item-title">{{ itemData.title }}</div>
+  </a>
+</ng-container>
