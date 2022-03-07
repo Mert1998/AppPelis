@@ -12,6 +12,9 @@ import { SliderComponent } from './components/slider/slider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PeliculasBannerComponent } from './components/peliculas-banner/peliculas-banner.component';
 import { PelisItemComponent } from './components/pelis-item/pelis-item.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { DetalleComponent } from './pages/detalle/detalle.component';
+import { TabViewModule } from 'primeng/tabview';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +24,17 @@ import { PelisItemComponent } from './components/pelis-item/pelis-item.component
     MoviesComponent,
     SliderComponent,
     PeliculasBannerComponent,
-    PelisItemComponent
+    PelisItemComponent,
+    DetalleComponent
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    PaginatorModule,
+    TabViewModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
