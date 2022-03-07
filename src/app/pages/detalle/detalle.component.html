@@ -1,8 +1,56 @@
 <ng-container *ngIf="detalle">
   <slider [peliculas]="[detalle]" [isBanner]="true"></slider>
   <p-tabView>
-    <p-tabPanel header="Overview"> Content 1 </p-tabPanel>
-    <p-tabPanel header="Trailers"> Content 2 </p-tabPanel>
-    <p-tabPanel header="Pictures"> Content 3 </p-tabPanel>
+    <p-tabPanel header="Overview">
+      <div class="grid">
+        <div class="col-12 md:col-3 ld:col-3">
+          <img
+            class="poster"
+            [src]="imagenesSizes.medium + detalle.poster_path"
+            [alt]="detalle.title"
+          />
+        </div>
+        <div class="col-12 md:col-9 ld:col-9">
+          <h2>Overview</h2>
+          <p class="overview">{{ detalle.overview }}</p>
+          <div class="stat">
+            <div class="label">Release Date:</div>
+            <div class="value">
+              {{ detalle.release_date | date: 'dd.MM.yyyy' }}
+            </div>
+          </div>
+          <div class="stat">
+            <div class="label">Language:</div>
+            <div class="value">
+              {{ detalle.original_language | uppercase }}
+            </div>
+          </div>
+          <div class="stat">
+            <div class="label">Revenue:</div>
+            <div class="value">
+              {{ detalle.revenue | currency }}
+            </div>
+          </div>
+          <div class="stat">
+            <div class="label">Duration:</div>
+            <div class="value">{{ detalle.runtime }} min</div>
+          </div>
+          <div class="stat">
+            <div class="label">Status:</div>
+            <div class="value">
+              {{ detalle.status }}
+            </div>
+          </div>
+          <div class="stat">
+            <div class="label">Genres:</div>
+            <div class="value">
+              <span *ngFor="let genre of detalle.genres">
+                {{ genre.name }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </p-tabPanel>
   </p-tabView>
 </ng-container>

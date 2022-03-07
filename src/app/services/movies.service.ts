@@ -24,9 +24,12 @@ export class MoviesService {
     return this.http.get<Movie>(`${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`);
   }
 
-  buscarMovies(page: number) {
+  buscarMovies(page: number, buscarValor?: string) {
+    const exis = buscarValor ? '/search/movie' : '/movie/popular';
     return this.http
-      .get<MovieDto>(`${this.baseUrl}/movie/popular?page=${page}&api_key=${this.apiKey}`)
+      .get<MovieDto>(
+        `${this.baseUrl}${exis}?page=${page}&query=${buscarValor}&api_key=${this.apiKey}`
+      )
       .pipe(
         switchMap((res) => {
           return of(res.results);

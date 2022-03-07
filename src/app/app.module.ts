@@ -15,6 +15,7 @@ import { PelisItemComponent } from './components/pelis-item/pelis-item.component
 import { PaginatorModule } from 'primeng/paginator';
 import { DetalleComponent } from './pages/detalle/detalle.component';
 import { TabViewModule } from 'primeng/tabview';
+import { InputTextModule } from 'primeng/inputtext';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { TabViewModule } from 'primeng/tabview';
     AppRoutingModule,
     HttpClientModule,
     PaginatorModule,
-    TabViewModule
+    TabViewModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

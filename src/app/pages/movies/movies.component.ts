@@ -9,19 +9,30 @@ import { Movie } from '../../models/movie';
 })
 export class MoviesComponent implements OnInit {
   pelis: Movie[] = [];
-
+  buscarValor: string | null = null;
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {
     this.getPagedMovies(1);
   }
 
-  getPagedMovies(page: number) {
-    this.moviesService.buscarMovies(page).subscribe((pelis) => {
+  getPagedMovies(page: number, buscarLlave?: string) {
+    this.moviesService.buscarMovies(page, buscarLlave).subscribe((pelis) => {
       this.pelis = pelis;
     });
   }
   paginar(event: any) {
-    this.getPagedMovies(event.page + 1);
+    const numeroPagina = event.page + 1;
+    if (this.buscarValor) {
+      this.getPagedMovies(numeroPagina, this.buscarValor);
+    } else {
+      this.getPagedMovies(numeroPagina);
+    }
+  }
+
+  buscarCambiado() {
+    if (this.buscarValor) {
+      this.getPagedMovies(1, this.buscarValor);
+    }
   }
 }
