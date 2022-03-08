@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/models/movie';
 import { MoviesService } from 'src/app/services/movies.service';
 import { MoviesComponent } from '../movies/movies.component';
-import { IMAGENES_SIZE } from '../../Constantes/size.imagenes';
+import { IMAGES_SIZE } from '../../Constants/size.images';
 
 @Component({
   selector: 'app-detalle',
@@ -12,7 +12,7 @@ import { IMAGENES_SIZE } from '../../Constantes/size.imagenes';
 })
 export class DetalleComponent implements OnInit {
   detalle: Movie | null = null;
-  imagenesSizes = IMAGENES_SIZE;
+  imagenesSizes = IMAGES_SIZE;
 
   constructor(private ruta: ActivatedRoute, private moviesService: MoviesService) {}
 

@@ -10,8 +10,8 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SliderComponent } from './components/slider/slider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PeliculasBannerComponent } from './components/peliculas-banner/peliculas-banner.component';
-import { PelisItemComponent } from './components/pelis-item/pelis-item.component';
+import { MovieBannerComponent } from './components/movie-banner/movie-banner.component';
+import { ItemComponent } from './components/item/item.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { DetalleComponent } from './pages/detalle/detalle.component';
 import { TabViewModule } from 'primeng/tabview';
@@ -24,8 +24,8 @@ import { InputTextModule } from 'primeng/inputtext';
     HomeComponent,
     MoviesComponent,
     SliderComponent,
-    PeliculasBannerComponent,
-    PelisItemComponent,
+    MovieBannerComponent,
+    ItemComponent,
     DetalleComponent
   ],
   imports: [
